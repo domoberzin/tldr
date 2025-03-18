@@ -8,17 +8,9 @@
 
 `aws s3 ls {{bucket_name}}`
 
-- Sync files and directories from local to bucket:
+- Filter the included or excluded files, directory, objects or extension that will be manipulated in the operations:
 
-`aws s3 sync {{path/to/file1 path/to/file2 ...}} s3://{{bucket_name}}`
-
-- Sync files and directories from bucket to local:
-
-`aws s3 sync s3://{{bucket_name}} {{path/to/target}}`
-
-- Sync files and directories with exclusions:
-
-`aws s3 sync {{path/to/file1 path/to/file2 ...}} s3://{{bucket_name}} --exclude {{path/to/file}} --exclude {{path/to/directory}}/*`
+`aws s3 {{cp|mv|sync|rm|...}} {{subcommand_options}} --exclude {{path/to/file}} --exclude {{path/to/directory}}/* --include {{*.ext}}`
 
 - Remove file from bucket:
 
